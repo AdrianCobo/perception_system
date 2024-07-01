@@ -23,15 +23,19 @@ def generate_launch_description():
                       parameters=[{'use_mag': False}], remappings=[('/imu/data_raw', '/camera/camera/imu')])
     
     fake_tf_node = Node(package='tf2_ros', executable='static_transform_publisher', output='screen',
-                      arguments = ["0", "0", "0", "0", "0", "0", "rslidar", "camera_link"], remappings=[('/imu/data_raw', '/camera/camera/imu')])
+                      arguments = ["0", "0", "0", "0", "0", "0", "odom", "camera_link"])
 
-    rviz_config=get_package_share_directory('rslidar_sdk')+'/rviz/rviz2.rviz'
+    fake_tf_node_2 = Node(package='tf2_ros', executable='static_transform_publisher', output='screen',
+                      arguments = ["0", "0", "0", "0", "0", "0", "camera_link", "rslidar"])
+
+    rviz_config=get_package_share_directory('perception_system')+'/rviz/perception_rviz_config.rviz'
     rviz_node = Node(namespace='rviz2', package='rviz2', executable='rviz2', arguments=['-d',rviz_config])
 
     return LaunchDescription([
         lidar_node,
         camera_with_imu_enabled_node,
         fake_tf_node,
+        fake_tf_node_2,
         imu_filter_node,
         rviz_node
     ])
