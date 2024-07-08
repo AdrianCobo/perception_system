@@ -19,9 +19,12 @@
 #include "cv_bridge/cv_bridge.h"
 #include "sensor_msgs/msg/image.hpp"
 #include <time.h>
+#include <iostream>
+#include <fstream>
  
 using namespace cv;
 using namespace std;
+std::ofstream FPS_DATA_FILE("/home/adrianco/Desktop/ros2_ws/src/perception_system/data/FPS.txt"); // Record FPS Data File
 
 class FpsCalculator : public rclcpp::Node
 {
@@ -47,7 +50,7 @@ private:
         // Start Time
         time(&start);
         frames_obtained_++;
-    }else if(frames_obtained_ == 120){
+    }else if(frames_obtained_ == 30){
         // End Time
         time(&end);
 
@@ -58,6 +61,9 @@ private:
         // Calculate frames per second
         int fps  = (int)(frames_obtained_ / seconds);
         cout << "Estimated frames per second : " << fps << endl;
+        
+        // uncomment next lines for recording data
+        FPS_DATA_FILE << frames_obtained_ << std::endl;
         frames_obtained_ = 0;
     }else{
         frames_obtained_++;
@@ -74,6 +80,7 @@ int main(int argc, char** argv)
     rclcpp::init(argc, argv);
     rclcpp::spin(std::make_shared<FpsCalculator>());
     rclcpp::shutdown();
+    FPS_DATA_FILE.close();
 
     return 0;
 }
