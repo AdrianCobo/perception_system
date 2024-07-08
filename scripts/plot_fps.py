@@ -22,5 +22,6 @@ def create_graph():
     print("std_dev of cart bars dist",np.std(fps_int), "mean: ", np.mean(fps_int))
 
     plt.show()
+    plt.savefig('fps.png')
 
 create_graph()
