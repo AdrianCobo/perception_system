@@ -17,7 +17,8 @@ def generate_launch_description():
                           'enable_accel': 'true',
                           'enable_gyro': 'true',
                           'unite_imu_method': '1',
-                          'pointcloud.enable': 'true'}.items()
+                          'pointcloud.enable': 'true',
+                          'enable_color': 'true'}.items()
     )
 
     imu_filter_node = Node(package='imu_filter_madgwick', executable='imu_filter_madgwick_node', output='screen',

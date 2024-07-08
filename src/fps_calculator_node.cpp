@@ -24,7 +24,7 @@
  
 using namespace cv;
 using namespace std;
-std::ofstream FPS_DATA_FILE("/home/adrianco/Desktop/ros2_ws/src/perception_system/data/FPS.txt"); // Record FPS Data File
+std::ofstream FPS_DATA_FILE("/home/ir/Desktop/ros2_ws/src/perception_system/data/FPS.txt"); // Record FPS Data File
 
 class FpsCalculator : public rclcpp::Node
 {
@@ -37,7 +37,7 @@ public:
     frames_obtained_ = 0;
 
     subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
-      "/image_raw", qos,
+      "/camera/camera/color/image_raw", qos,
       std::bind(&FpsCalculator::count_frames_callback, this, std::placeholders::_1));
   }
 
@@ -63,7 +63,7 @@ private:
         cout << "Estimated frames per second : " << fps << endl;
         
         // uncomment next lines for recording data
-        FPS_DATA_FILE << frames_obtained_ << std::endl;
+        FPS_DATA_FILE << fps << std::endl;
         frames_obtained_ = 0;
     }else{
         frames_obtained_++;

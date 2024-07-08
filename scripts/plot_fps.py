@@ -3,7 +3,7 @@ from matplotlib import style
 import numpy as np
 
 def create_graph():
-    contents = open("/home/adrianco/Desktop/ros2_ws/src/perception_system/data/FPS.txt", "r").read().split('\0')
+    contents = open("/home/ir/Desktop/ros2_ws/src/perception_system/data/FPS.txt", "r").read().split('\0')
     fps_text = contents[0].split('\n')
     fps_text = fps_text[:-1] # the last data is always empty i dont know why
     fps_int = []
