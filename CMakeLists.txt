@@ -36,7 +36,7 @@ install(TARGETS fps_calculator_node
   DESTINATION lib/${PROJECT_NAME})
 
 install(
-  DIRECTORY launch rviz
+  DIRECTORY launch rviz meshes description
   DESTINATION share/${PROJECT_NAME}
 )
 

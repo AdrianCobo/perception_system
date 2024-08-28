@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <xacro:include filename="inertial_macros.xacro"/>
+
+    <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+
+    <!-- BASE LINK-->
+    <link name="base_link"></link>
+
+    <!-- BASE_FOOTPRINT LINK necessary for slam_toolbox-->
+
+    <joint name="base_footprint_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="base_footprint"/>
+    </joint>
+
+    <link name="base_footprint"></link>
+
+    <joint name="base_chassis_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0025" rpy="0.0 0.0 0.0"/>
+        <parent link="base_footprint"/>
+        <child link="base_chassis"/>
+    </joint>
+
+    <link name="base_chassis">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://perception_system/meshes/base.dae" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://perception_system/meshes/base.dae" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <!-- Todo -->
+        <xacro:inertial_box mass="0.5" x="0.01" y="0.01" z="0.01">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="camera_attachment_joint" type="fixed">
+        <origin xyz="0.055 0.0 0.015" rpy="0.0 0.0 0.0"/>
+        <parent link="base_footprint"/>
+        <child link="camera_attachment_link"/>
+    </joint>
+
+    <link name="camera_attachment_link"></link>
+
+    <joint name="lidar_chassis_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.03" rpy="0.0 0.0 0.0"/>
+        <parent link="base_footprint"/>
+        <child link="lidar_chassis"/>
+    </joint>
+
+    <link name="lidar_chassis">
+        <visual name="">
+            <origin xyz="0.0 0.0 -0.03" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://perception_system/meshes/soporte_lidar.dae" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://perception_system/meshes/soporte_lidar.dae" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <!-- Todo -->
+        <xacro:inertial_box mass="0.5" x="0.01" y="0.01" z="0.01">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </xacro:inertial_box>
+    </link>
+
+</robot>
