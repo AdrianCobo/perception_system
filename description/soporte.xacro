@@ -6,7 +6,7 @@
     <xacro:arg name="use_mesh" default="true" />
     
     <xacro:include filename="inertial_macros.xacro"/>
-    <xacro:include filename="soporte_inferior.xacro" />
+    <xacro:include filename="soporte_core.xacro" />
     <xacro:include filename="lidar.xacro" />
     <xacro:include filename="jetson.xacro" />
     <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
@@ -15,8 +15,8 @@
         <origin xyz="0.0 0.0 0.0575" rpy="0 0 0"/>
     </xacro:lidar>
 
-    <xacro:jetson parent="lidar_chassis">
-        <origin xyz="0.0 0.0 -0.064" rpy="0 0 0"/>
+    <xacro:jetson parent="base_footprint">
+        <origin xyz="0.0 0.0 -0.0365" rpy="0 0 0"/>
     </xacro:jetson>
     
     <xacro:sensor_d435 parent="camera_attachment_link" use_nominal_extrinsics="$(arg use_nominal_extrinsics)" add_plug="$(arg add_plug)" use_mesh="$(arg use_mesh)">

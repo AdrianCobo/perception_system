@@ -21,7 +21,7 @@
     <link name="base_footprint"></link>
 
     <joint name="base_chassis_joint" type="fixed">
-        <origin xyz="0.0 0.0 0.0025" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
         <parent link="base_footprint"/>
         <child link="base_chassis"/>
     </joint>
@@ -35,7 +35,7 @@
             <material name="white"/>
         </visual>
         <collision>
-            <origin xyz="0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <origin xyz="0 0.0 -0.005" rpy="0.0 0.0 0.0"/>
             <geometry>
                 <mesh filename="package://perception_system/meshes/base.dae" scale="0.001 0.001 0.001"/>
             </geometry>
