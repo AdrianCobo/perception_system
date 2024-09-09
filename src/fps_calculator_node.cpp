@@ -41,8 +41,6 @@ public:
       std::bind(&FpsCalculator::count_frames_callback, this, std::placeholders::_1));
   }
 
-  int frames_obtained_;
-
 private:
   void count_frames_callback(const sensor_msgs::msg::Image::SharedPtr msg)
   {
@@ -50,7 +48,7 @@ private:
         // Start Time
         time(&start);
         frames_obtained_++;
-    }else if(frames_obtained_ == 30){
+    }else if(frames_obtained_ == 60){
         // End Time
         time(&end);
 
@@ -59,7 +57,7 @@ private:
         cout << "Time taken : " << seconds << " seconds" << endl;
     
         // Calculate frames per second
-        int fps  = (int)(frames_obtained_ / seconds);
+        double fps  = frames_obtained_ / seconds;
         cout << "Estimated frames per second : " << fps << endl;
         
         // uncomment next lines for recording data
@@ -70,6 +68,7 @@ private:
     }
   }
 
+  double frames_obtained_;
   time_t start, end;
   rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
 };

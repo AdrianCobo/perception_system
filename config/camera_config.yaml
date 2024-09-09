@@ -1,21 +1,13 @@
-# enable_color: true
-# rgb_camera.profile: 1280x720x15
-# enable_depth: true
-# align_depth.enable: true
-# enable_sync: true
-# publish_tf: true
-# tf_publish_rate: 1.0
-
 camera_name: 'camera'  #'camera unique name'
 camera_namespace': 'camera' #'namespace for camera'
-serial_no:  "''" #'choose device by serial number'
-usb_port_id:  "''" #'choose device by usb port id'
-device_type:  "''" #'choose device by type'
-# config_file:  "''" #'yaml config file'
-# json_file_path': "''" #'allows advanced configuration'
-initial_reset:  true #"''"
+serial_no:  '' #'choose device by serial number'
+usb_port_id:  '' #'choose device by usb port id'
+device_type:  '' #'choose device by type'
+# config_file:  '' #'yaml config file'
+# json_file_path': '' #'allows advanced configuration'
+initial_reset:  true #''
 accelerate_gpu_with_glsl': "false" #'enable GPU acceleration with GLSL'
-rosbag_filename:  "''" #'A realsense bagfile to run from as a device'
+rosbag_filename:  '' #'A realsense bagfile to run from as a device'
 log_level:  'info' #'debug log level [DEBUG|INFO|WARN|ERROR|FATAL]'
 output': 'screen' #'pipe node output [screen|log]'
 enable_color': true #'enable color stream'
@@ -44,12 +36,12 @@ enable_sync:  false #"'enable sync mode'"
 enable_rgbd:  false #"'enable rgbd topic'"
 enable_gyro:  true #"'enable gyro stream'"
 enable_accel': true #"'enable accel stream'"
-gyro_fps': '0' #"''"
-accel_fps:  '0' #"''"
+gyro_fps': '0' #''
+accel_fps:  '0' #''
 unite_imu_method': "1" #'[0-None 1-copy 2-linear_interpolation]'
-clip_distance:  '-2.' #"''"
-angular_velocity_cov': '0.01' #"''"
-linear_accel_cov': '0.01' #"''"
+clip_distance:  '-2.' #''
+angular_velocity_cov': '0.01' #''
+linear_accel_cov': '0.01' #''
 diagnostics_period': '0.0' #'Rate of publishing diagnostics. 0=Disabled'
 publish_tf': false #'[bool] enable/disable publishing static & dynamic TF'
 tf_publish_rate:  '0.0' #'[double] rate in Hz for publishing dynamic TF'
@@ -57,7 +49,7 @@ pointcloud.enable:  true #''
 pointcloud.stream_filter': '2' #'texture stream for pointcloud'
 pointcloud.stream_index_filter:  '0' #'texture stream index for pointcloud'
 pointcloud.ordered_pc:  false #''
-pointcloud.allow_no_texture_points': false #"''"
+pointcloud.allow_no_texture_points': false #''
 align_depth.enable': false #'enable align depth filter'
 colorizer.enable': false #'enable colorizer filter'
 decimation_filter.enable': false #'enable_decimation_filter'
@@ -68,3 +60,4 @@ hole_filling_filter.enable': false #'enable_hole_filling_filter'
 hdr_merge.enable': false #'hdr_merge filter enablement flag'
 wait_for_device_timeout:  '-1.' #'Timeout for waiting for device to connect (Seconds)'
 reconnect_timeout:  '6.' #'Timeout(seconds) between consequtive reconnection attempts'}
+global_time_enabled: false
