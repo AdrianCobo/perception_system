@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="box" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="inertial_macros.xacro"/>
+
+    <material name="orange">
+        <color rgba="0.6 0.5 0.0 1.0"/>
+    </material>
+
+    <xacro:macro name="box" params="parent *origin">
+
+        <joint name="box" type="fixed">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <parent link="${parent}"/>
+            <child link="box_link"/>
+        </joint>
+
+        <link name="box_link">
+            <visual name="">
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <mesh filename="package://perception_system/meshes/box.dae"/>
+                </geometry>
+                <material name="orange"/> <!-- ToDo paint .dae-->
+            </visual>
+            <collision>
+                <origin xyz="0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <mesh filename="package://perception_system/meshes/box.dae"/>
+                </geometry>
+            </collision>
+            <!-- ToDo -->
+            <xacro:inertial_box mass="0.5" x="0.251" y="0.170" z="0.155">
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            </xacro:inertial_box>
+        </link>
+
+    </xacro:macro>
+</robot>

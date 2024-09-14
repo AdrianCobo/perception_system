@@ -30,14 +30,14 @@
         <visual name="">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://perception_system/meshes/base.dae" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://perception_system/meshes/base.dae"/>
             </geometry>
             <material name="white"/>
         </visual>
         <collision>
             <origin xyz="0 0.0 -0.005" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://perception_system/meshes/base.dae" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://perception_system/meshes/base.dae"/>
             </geometry>
         </collision>
         <!-- Todo -->
@@ -55,7 +55,7 @@
     <link name="camera_attachment_link"></link>
 
     <joint name="lidar_chassis_joint" type="fixed">
-        <origin xyz="0.0 0.0 0.03" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.065 0.0 0.055" rpy="0.0 0.0 0.0"/>
         <parent link="base_footprint"/>
         <child link="lidar_chassis"/>
     </joint>
@@ -64,14 +64,14 @@
         <visual name="">
             <origin xyz="0.0 0.0 -0.03" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://perception_system/meshes/soporte_lidar.dae" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://perception_system/meshes/lidar_base.dae"/>
             </geometry>
             <material name="white"/>
         </visual>
         <collision>
-            <origin xyz="0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <origin xyz="0 0.0 -0.03" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://perception_system/meshes/soporte_lidar.dae" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://perception_system/meshes/lidar_base.dae"/>
             </geometry>
         </collision>
         <!-- Todo -->
