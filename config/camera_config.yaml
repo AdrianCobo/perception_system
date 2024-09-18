@@ -15,7 +15,7 @@ rgb_camera.color_profile': '000' #'color stream profile'
 rgb_camera.color_format:  'RGB8' #'color stream format'
 rgb_camera.enable_auto_exposure': true #'enable/disable auto exposure for color image'
 enable_depth': true #'enable depth stream'
-enable_infra': false #'enable infra0 stream'
+enable_infra': true #'enable infra0 stream'
 enable_infra1:  false #'enable infra1 stream'
 enable_infra2:  false #'enable infra2 stream'
 depth_module.depth_profile': '000' #'depth stream profile'
@@ -36,8 +36,8 @@ enable_sync:  false #"'enable sync mode'"
 enable_rgbd:  false #"'enable rgbd topic'"
 enable_gyro:  true #"'enable gyro stream'"
 enable_accel': true #"'enable accel stream'"
-gyro_fps': '0' #''
-accel_fps:  '0' #''
+gyro_fps': '20' #''
+accel_fps:  '20' #''
 unite_imu_method': "1" #'[0-None 1-copy 2-linear_interpolation]'
 clip_distance:  '-2.' #''
 angular_velocity_cov': '0.01' #''
