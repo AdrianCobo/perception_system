@@ -12,10 +12,6 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('perception_system'), 'launch', 'spawn_systems.launch.py')]))
     
-    camera_config_yaml=get_package_share_directory('perception_system')+'/config/camera_config.yaml'
-    camera_config_json=get_package_share_directory('perception_system')+'/config/camera_config.json'
-    
-
     lidar_node = Node(namespace='rslidar_sdk', package='rslidar_sdk', executable='rslidar_sdk_node', output='screen')
 
     camera_with_imu_enabled_node = IncludeLaunchDescription(

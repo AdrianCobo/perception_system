@@ -18,8 +18,8 @@ def generate_launch_description():
         package='scanmatcher',
         executable='scanmatcher_node',
         parameters=[main_param_dir],
-        # remappings=[('/input_cloud','/rslidar_points'), ('/imu', '/imu/data')],
-        remappings=[('/input_cloud','/rslidar_points')],
+        remappings=[('/input_cloud','/rslidar_points'), ('/imu', '/imu/data')],
+        #remappings=[('/input_cloud','/rslidar_points')],
         output='screen'
         )
 

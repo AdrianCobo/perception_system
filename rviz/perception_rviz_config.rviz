@@ -5,7 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /PCL Map1/Topic1
         - /Modified Path1/Topic1
       Splitter Ratio: 0.5
     Tree Height: 719
@@ -26,7 +25,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: PointCloud2
+    SyncSource: PCL Lidar
 Visualization Manager:
   Class: ""
   Displays:
@@ -195,29 +194,9 @@ Visualization Manager:
           Value: false
         box_link:
           Value: true
-        camera_accel_frame:
-          Value: false
-        camera_accel_optical_frame:
-          Value: false
         camera_attachment_link:
           Value: false
         camera_bottom_screw_frame:
-          Value: false
-        camera_color_frame:
-          Value: false
-        camera_color_optical_frame:
-          Value: false
-        camera_depth_frame:
-          Value: false
-        camera_depth_optical_frame:
-          Value: false
-        camera_gyro_frame:
-          Value: false
-        camera_gyro_optical_frame:
-          Value: false
-        camera_imu_frame:
-          Value: false
-        camera_imu_optical_frame:
           Value: false
         camera_link:
           Value: false
@@ -235,37 +214,22 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        base_link:
-          base_footprint:
-            base_chassis:
-              {}
-            box_link:
-              {}
-            camera_attachment_link:
-              camera_bottom_screw_frame:
-                camera_link:
-                  camera_accel_frame:
-                    camera_accel_optical_frame:
-                      {}
-                  camera_color_frame:
-                    camera_color_optical_frame:
-                      {}
-                  camera_depth_frame:
-                    camera_depth_optical_frame:
-                      {}
-                  camera_gyro_frame:
-                    camera_gyro_optical_frame:
-                      {}
-                    camera_imu_frame:
-                      camera_imu_optical_frame:
-                        {}
-            jetson_link:
-              {}
-            lidar_chassis:
-              rslidar:
-                {}
         map:
-          {}
+          base_link:
+            base_footprint:
+              base_chassis:
+                {}
+              box_link:
+                {}
+              camera_attachment_link:
+                camera_bottom_screw_frame:
+                  camera_link:
+                    {}
+              jetson_link:
+                {}
+              lidar_chassis:
+                rslidar:
+                  {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -312,19 +276,19 @@ Visualization Manager:
       Channel Name: intensity
       Class: rviz_default_plugins/PointCloud2
       Color: 255; 255; 255
-      Color Transformer: ""
+      Color Transformer: Intensity
       Decay Time: 0
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 4096
+      Max Intensity: 255
       Min Color: 0; 0; 0
-      Min Intensity: 0
+      Min Intensity: 1
       Name: PCL Map
-      Position Transformer: ""
+      Position Transformer: XYZ
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.009999999776482582
+      Size (m): 0.019999999552965164
       Style: Flat Squares
       Topic:
         Depth: 5
@@ -348,7 +312,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: ""
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 4096
@@ -369,7 +333,7 @@ Visualization Manager:
         Value: /modified_map
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 1
       Axes Length: 1
       Axes Radius: 0.10000000149011612
@@ -492,25 +456,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 2.8324904441833496
+      Distance: 50.30665969848633
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 5.53071928024292
+        Y: 6.660732746124268
+        Z: 0.08123531192541122
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.435398668050766
+      Pitch: 1.5697963237762451
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.1735897064208984
+      Yaw: 4.923614978790283
     Saved: ~
 Window Geometry:
   Displays:
@@ -531,4 +495,4 @@ Window Geometry:
     collapsed: false
   Width: 1850
   X: 70
-  Y: 27
+  Y: 795
