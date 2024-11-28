@@ -85,7 +85,10 @@ Sensores:
 
 Chassis:
 - [Modelo 3D](https://github.com/AdrianCobo/perception_system/tree/main/meshes)
-
+  <div align="center">
+  <img width=500px src="https://github.com/AdrianCobo/my_bot/blob/main/imgs/mybot_mk2.jpg](https://github.com/user-attachments/assets/6268514e-7398-4a32-aca1-fb947f5899ed" alt="explode"></a>
+  </div>
+  
 ## Rosbags y memoria del TFG
 Puedes encontrar la memoria del TFG de este proyecto y los rosbags grabados durante los experimentos [aquí](https://urjc-my.sharepoint.com/personal/josemiguel_guerrero_urjc_es/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjosemiguel%5Fguerrero%5Furjc%5Fes%2FDocuments%2FRosbags%5FAdrian&ga=1)
 
