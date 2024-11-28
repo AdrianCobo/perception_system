@@ -73,14 +73,28 @@ ros2 bag play $(rosbag_selected)
 
 ## Resultado de usar el sistema de percepción con lidar_slam
 [![Resultado del Experimento](https://moresales.ca/wp-content/uploads/2022/06/Click-Me-2.png)](https://drive.google.com/file/d/1VGTcvLKiD8vrUgkvgi9_q75DOobXr2hW/view?usp=sharing)
+ 
+## Componentes empleados:
+Procesador:
+- [Jetson AGX Xavier](https://www.nvidia.com/es-la/autonomous-machines/embedded-systems/jetson-agx-xavier/)
+- [Intel® NUC NUC5i5RYK](https://www.intel.la/content/www/xl/es/products/sku/83254/intel-nuc-kit-nuc5i5ryk/specifications.html) (Recomendado)  
+
+Sensores:
+- [Intel realsense d435I](https://www.intelrealsense.com/depth-camera-d435i/)
+- [Robosense Helios 32-beam](https://www.robosense.ai/en/rslidar/RS-Helios)
+
+Chassis:
+- [Modelo 3D](https://github.com/AdrianCobo/perception_system/tree/main/meshes)
+
+## Rosbags y memoria del TFG
+Puedes encontrar la memoria del TFG de este proyecto y los rosbags grabados durante los experimentos [aquí](https://urjc-my.sharepoint.com/personal/josemiguel_guerrero_urjc_es/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjosemiguel%5Fguerrero%5Furjc%5Fes%2FDocuments%2FRosbags%5FAdrian&ga=1)
 
 ## Problemas conocidos:
 Si tienes problemas con la imu de la camara realsense d435I prueba a configurar las reglas udev:  
 Posible mensaje de error: [realsense2_camera_node-1]  24/09 12:16:19,876 ERROR [138762487072320] (backend-v4l2.cpp:2970) xioctl(VIDIOC_QBUF) failed when requesting new frame! fd: 31 error: No such device  
 
 [Solución](https://dev.intelrealsense.com/docs/compiling-librealsense-for-linux-ubuntu-guide?_ga=2.136179505.1802472520.1727172753-1313938100.1727172753)
-**Sigue el tutorial solo hasta ejecutar el script**: ./scripts/setup_udev_rules.sh  
+**Sigue el tutorial solo hasta ejecutar el script**: ./scripts/setup_udev_rules.sh 
 
 ## ToDo
 - Corregir inercias en los Xacro.
-- Indicar repo con los rosbags
