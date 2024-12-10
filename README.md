@@ -83,10 +83,18 @@ Sensores:
 - [Intel realsense d435I](https://www.intelrealsense.com/depth-camera-d435i/)
 - [Robosense Helios 32-beam](https://www.robosense.ai/en/rslidar/RS-Helios)
 
+Batería portatil:
+- [Krisdonia 50000mah Power Pack](https://www.amazon.es/Krisdonia-50000mah-Bater%C3%ADa-Cargador-Port%C3%A1til/dp/B077TR3H2R)
+
 Chassis:
 - [Modelo 3D](https://github.com/AdrianCobo/perception_system/tree/main/meshes)
   <div align="center">
   <img width=500px src="https://github.com/user-attachments/assets/6268514e-7398-4a32-aca1-fb947f5899ed" alt="explode"></a>
+  </div>
+
+Diagrama de conexiones:
+  <div align="center">
+  <img width=500px src="https://github.com/user-attachments/assets/81e16504-ab6a-4319-b346-66d632af213c" alt="explode"></a>
   </div>
   
 ## Rosbags y memoria del TFG
