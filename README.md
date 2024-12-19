@@ -55,7 +55,7 @@ ros2 launch mola_lidar_odometry ros2-lidar-odometry.launch.py lidar_topic_name:=
 ```
 
 
-## Simulación el sistema con lidar_slam:
+## Simulación del sistema con lidar_slam:
 ```shell
 ros2 launch perception_system simulated_system.launch.py
 ros2 launch perception_system lidarslam.launch.py
@@ -64,7 +64,7 @@ ros2 bag play $(rosbag_selected)
 **Si quieres usar la imu necesitas realizar los siguientes cambios**:  
 - En ~your_ros2_ws/src/perception_systemconfig/lidarslam.yaml cambia el parámetro 'use_imu' a True y el parámetro 'scan_period' al (numero de mensajes publicados por tu IMU)/segundos (0.005 en el caso de los rosbags).
 
-## Simulación el sistema con mola:
+## Simulación del sistema con MOLA:
 ```shell
 ros2 launch perception_system simulated_system.launch.py
 ros2 launch mola_lidar_odometry ros2-lidar-odometry.launch.py lidar_topic_name:=/rslidar_points
